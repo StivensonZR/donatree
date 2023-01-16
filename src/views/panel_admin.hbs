@@ -1,0 +1,566 @@
+<div class="container.fluid">
+
+    {{>nav-index}}
+    <br><br>
+    <br><br>
+    <br>
+
+    <div id="panel-admin" class="container bg-light">
+
+
+        <nav>
+            <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-peti"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Proyectos</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-usuarios"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Usuarios</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-crear"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Peticiones</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-gestionar"
+                    </div>
+        </nav>
+        <div class="mods">
+            <div class="tab-content" id="nav-tabContent">
+
+                <!---MODULOS--->
+
+                <!---PROYECTOS--->
+                <div class="tab-pane fade show active" id="nav-peti" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="cp container ">
+                        <br>
+                        <div class="row justify-content-center ">
+
+                            <div class="row justify-content-center">
+
+                                <!----MODAL NUEVO PROYECTO---->
+                                <div class="col-md-11 text-start" id="modal_proyecto">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                                        Agregar Proyecto</button>
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nuevo
+                                                        Proyecto</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="POST" action="/crear-proyecto"
+                                                        enctype="multipart/form-data">
+
+                                                        <div class="row justify-content-center ">
+                                                            <div class="col-md-10 ">
+                                                                <span id="passwordHelpInline" class="form-text">
+                                                                    Nombre del proyecto
+                                                                </span>
+                                                                <input type="text" class="form-control bg-light"
+                                                                    id="validationDefault01" name="nombre_proyecto"
+                                                                    aria-required="true" autocomplete="chrome-off"
+                                                                    aria-label="Nombre" rows="1"
+                                                                    class="andes-form-control__field" maxlength="30"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row justify-content-center ">
+
+                                                            <div class="col-md-10 ">
+                                                                <span id="passwordHelpInline" class="form-text">
+                                                                    Descripción
+                                                                </span>
+                                                                <textarea class="form-control bg-light"
+                                                                    id="floatingTextarea2" name="descripcion_proyecto"
+                                                                    aria-required="true" autocomplete="chrome-off"
+                                                                    style="height: 100px" maxlength="150"></textarea>
+
+
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row justify-content-center ">
+                                                            <div class="col-md-10 ">
+                                                                <span id="passwordHelpInline" class="form-text">
+                                                                    responsable
+                                                                </span>
+
+                                                                <input type="text" class="form-control bg-light"
+                                                                    id="validationDefault01" name="resposable"
+                                                                    aria-required="true" autocomplete="chrome-off"
+                                                                    aria-label="Nombre" rows="1"
+                                                                    class="andes-form-control__field" maxlength="30"
+                                                                    required>
+
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row justify-content-center ">
+                                                            <div class="col-md-10 ">
+                                                                <div class="mb-3">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Imagen del proyecto
+                                                                    </span>
+                                                                    <input class="form-control" type="file"
+                                                                        name="img_proyecto">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="d-grid gap-2 col-md-5 mx-auto">
+                                                            <button class="btn btn-success bg-gradient"
+                                                                type="submit">Agregar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+
+                            {{!-- REGISTROS EJEMPLO --}}
+                            <div class="row justify-content-center">
+                                <div class="col-md-11 text-center ">
+                                    <br>
+                                    <div id="registro" class="col">
+                                        <table class="table responsive text-center ">
+                                            <thead class="table-dark">
+                                                <td>
+                                                    Nombre
+                                                </td>
+                                                <td>
+                                                    Descripción
+                                                </td>
+                                                <td>
+                                                    Responsable
+                                                </td>
+                                                <td>
+
+                                                </td>
+                                            </thead>
+
+                                            {{#if proyecto}}
+
+                                            {{#each proyecto}}
+                                            <tbody>
+                                                <td>
+                                                    {{this.proyecto}}
+                                                </td>
+                                                <td>
+                                                    {{this.descripcion}}
+                                                </td>
+                                                <td>
+                                                    {{this.responsable}}
+                                                </td>
+
+                                                <td class="acc">
+                                                    {{!-- <button type="button" class="btn " data-bs-toggle="modal"
+                                                        data-bs-target="#edit-proyects" data-bs-whatever="@mdo">
+                                                        <span class="material-icons">
+                                                            edit
+                                                        </span>
+                                                    </button> --}}
+
+                                                    <button id="{{id_proye}}" class="btn btn_actualizar_proyecto">
+                                                        <span class="material-icons">
+                                                            edit
+                                                        </span>
+                                                        <button <span class="material-icons">
+                                                            delete
+                                                            </span>
+                                                        </button>
+                                                        {{!--
+                                                        <a
+                                                            href="/eliminar/proyecto/{{id_responsable}}/{{id_proye}}/{{id_img}}">
+                                                            <span class="material-icons">
+                                                                delete
+                                                            </span>
+                                                        </a> --}}
+                                                </td>
+                                            </tbody>
+                                            {{/each}}
+                                            {{else}}
+                                            <tbody>
+                                                <td>
+                                                    No hay Datos
+                                                </td>
+                                                <td>
+                                                    No hay Datos
+                                                </td>
+                                                <td>
+                                                    No hay Datos
+                                                </td>
+                                            </tbody>
+                                            {{/if}}
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        
+                        </div>
+
+
+                        {{!-- MODAL EDITAR --}}
+                        <div class="modal fade" id="edit-proyects" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+
+                                {{!-- <form method="POST" action="/actualizar/proyecto" enctype="multipart/form-data">
+                                    --}}
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar proyecto</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            {{!-- <div class="row justify-content-center">
+                                                <div class="col-8 text-center">
+                                                    <div class="row justify-content-center">
+
+                                                        <label for="img" class="form-label">Imagen del proyecto</label>
+
+                                                        <div class="col-10">
+                                                            <img id="img">
+                                                        </div>
+                                                        <input class="form-control" name="img_proyecto" type="file"
+                                                            id="img_proyecto">
+                                                    </div>
+                                                </div>
+                                            </div> --}}
+                                            {{!-- <br> --}}
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="mb-3">
+                                                        <label for="nombre" class="form-label">Nombre del
+                                                            proyecto</label>
+                                                        <input type="text" class="form-control" id="nombre">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="mb-3">
+                                                        <label for="descripción" class="form-label">Descripción</label>
+                                                        <textarea class="form-control mt-3"
+                                                            placeholder="Ingrese una breve descripción de usted o su empresa"
+                                                            id="descripcion" style="height: 100px"></textarea>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="row">
+
+                                                <div class="col">
+                                                    <div class="mb-3">
+                                                        <label for="nombre" class="form-label">Responsable</label>
+                                                        <input type="text" name="respon" class="form-control"
+                                                            id="responsable">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <button id="btn_actualizar" class="btn btn-primary">Guardar </button>
+                                        </div>
+                                    </div>
+                                    {{!--
+                                </form> --}}
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!---USUARIOS--->
+                <div class="tab-pane fade" id="nav-usuarios" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="cp container ">
+                        <div class="row justify-content-center">
+                            <div class="col-md-11 ">
+                                <br>
+                                <div class="row ">
+
+                                    <div class="col-md-4 ">
+                                        <div class="buscar ">
+                                            <div class="d-flex">
+                                                {{!-- <form method="GET" action="/buscar/usuario" class="d-flex"> --}}
+                                                    <input id="input_buscar" name="user" class="form-control me-2"
+                                                        type="search" placeholder="Buscar usuario">
+                                                    <button class="btn btn-outline-dark btn-sm" type="submit"
+                                                        id="btn_buscar">
+                                                        <span class="material-icons">
+                                                            search
+                                                        </span>
+                                                    </button>
+
+                                                    {{!--
+                                                </form> --}}
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <!----MODAL NUEVO USUARIO---->
+                                    <div class="col-md-8 text-end">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Nuevo
+                                            Usuario</button>
+
+                                        <div class="modal fade" id="exampleModal2" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Nuevo
+                                                            Usuario</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form method="POST" class="">
+                                                            <div class="row justify-content-center ">
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Nombre completo
+                                                                    </span>
+                                                                    <input type="text" class="form-control bg-light"
+                                                                        id="nombre_usuario" aria-required="true"
+                                                                        autocomplete="chrome-off" aria-label="Nombre"
+                                                                        rows="1" class="andes-form-control__field"
+                                                                        maxlength="40" required>
+                                                                </div>
+
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="row justify-content-center ">
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Nacionalidad
+                                                                    </span>
+                                                                    <select id="nacionalidad"
+                                                                        class="form-select bg-light"
+                                                                        aria-label="Default select example" required>
+                                                                        <option value="#">Seleccione su nacionalidad
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="row justify-content-center ">
+
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Email
+                                                                    </span>
+                                                                    <input type="email" class="form-control bg-light"
+                                                                        id="usuario" aria-required="true"
+                                                                        autocomplete="chrome-off" rows="1"
+                                                                        maxlength="30" required>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+
+                                                            <div class="row justify-content-center ">
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Contraseña
+                                                                    </span>
+                                                                    <input type="password" class="form-control bg-light"
+                                                                        id="clave" required>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="d-grid gap-2 col-md-5 mx-auto">
+                                                                <button class="btn btn-primary bg-gradient"
+                                                                    id="btn-registrar-usuario">Registrar</button>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        {{!-- REGISTROS EJEMPLO --}}
+                        <div class="row justify-content-center">
+                            <div class="col-md-11">
+                                <table class="table text-center" id="tabla_usuario">
+                                    <thead class="table-dark">
+                                        <td>
+                                            Usuario
+                                        </td>
+                                        <td>
+                                            Nombre
+                                        </td>
+                                        <td>
+                                            Teléfono
+                                        </td>
+                                        <td>
+                                            Rol Usuario
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </thead>
+                                    <tbody id="datos_usuario">
+                                        {{#if usuarios}}
+                                        {{#each usuarios}}
+                                        <tr>
+                                            <td>
+                                                {{this.usuario}}
+                                            </td>
+                                            <td>
+                                                {{this.nombre}}
+                                            </td>
+                                            <td>
+                                                {{this.telefono}}
+                                            </td>
+                                            <td>
+                                                {{this.rol}}
+                                            </td>
+
+                                            <td class="acc">
+                                                <button id="{{this.id}}" class="btn btn_actualizar_usuario  ">
+                                                    <span class="material-icons">
+                                                        block
+                                                    </span>
+                                                </button>
+                                                <button id="{{this.id}}/{{this.usuario}}"
+                                                    class="btn btn_eliminar_usuario">
+                                                    <span class="material-icons">
+                                                        person_remove
+                                                    </span>
+
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                        {{/if}}
+
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                        </div>
+                        <br>
+
+                        {{!-- MODAL ROL USUARIO --}}
+                        <div class="modal fade" id="edit-usuario" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar proyecto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="rol" class="form-label">Rol</label>
+                                                    <select class="form-control" name="" id="rol">
+                                                        <option value="#">Seleccione un rol</option>
+                                                        <option value="admin">Admin</option>
+                                                        <option value="usuario">Usuario</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button id="btn_actualizar_usuario" class="btn btn-primary">Guardar </button>
+                                    </div>
+                                </div>
+                                {{!--
+                                </form> --}}
+
+
+                            </div>
+                        </div>
+
+
+                        {{!-- PAGINACION --}}
+                        {{!-- <div class="row justify-content-center">
+                            <div class="col">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div> --}}
+                    </div>
+
+                </div>
+
+                <!---PETICIONES--->
+                <div class="tab-pane fade" id="nav-crear" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="container ">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,801 @@
+<div class="container.fluid">
+
+    {{>nav-index}}
+    <br><br>
+    <br><br>
+    <br>
+
+    <div class="container bg-light">
+
+
+        <nav>
+            <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-peti"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Proyectos</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-usuarios"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Usuarios</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-crear"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Peticiones</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-gestionar"
+                    </div>
+        </nav>
+        <div class="mods">
+            <div class="tab-content" id="nav-tabContent">
+
+                <!---MODULOS--->
+
+                <!---PROYECTOS--->
+                <div class="tab-pane fade show active" id="nav-peti" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="cp container ">
+                        <br>
+                        <div class="row justify-content-center ">
+
+                            <div class="row justify-content-center">
+
+                                <!----MODAL NUEVO PROYECTO---->
+                                <div class="col-md-11 text-start">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                                        Agregar Proyecto</button>
+
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nuevo
+                                                        Proyecto</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="POST" class="">
+                                                        {{!-- <div class="row justify-content-center">
+                                                            <div class="col text-center">
+                                                                <label for="validationDefault01"
+                                                                    class="form-label ">Nombre</label>
+                                                            </div>
+
+                                                        </div> --}}
+                                                        <div class="row justify-content-center ">
+                                                            <div class="col-md-10 ">
+                                                                <span id="passwordHelpInline" class="form-text">
+                                                                    Nombre del proyecto
+                                                                </span>
+                                                                <input type="text" class="form-control bg-light"
+                                                                    id="validationDefault01" aria-required="true"
+                                                                    autocomplete="chrome-off" aria-label="Nombre"
+                                                                    rows="1" class="andes-form-control__field"
+                                                                    maxlength="30" required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row justify-content-center ">
+
+                                                            <div class="col-md-10 ">
+                                                                <span id="passwordHelpInline" class="form-text">
+                                                                    Descripción
+                                                                </span>
+                                                                <textarea class="form-control bg-light"
+                                                                    id="floatingTextarea2" aria-required="true"
+                                                                    autocomplete="chrome-off" style="height: 100px"
+                                                                    maxlength="150"></textarea>
+                                                                {{!--
+                                                                <input type="text" class="form-control bg-light"
+                                                                    id="validationCustom01" aria-required="true"
+                                                                    autocomplete="chrome-off" rows="2" maxlength="100"
+                                                                    required> --}}
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row justify-content-center ">
+                                                            <div class="col-md-10 ">
+                                                                <span id="passwordHelpInline" class="form-text">
+                                                                    Nombre del responsable
+                                                                </span>
+                                                                <input type="text" class="form-control bg-light"
+                                                                    id="validationDefault01" aria-required="true"
+                                                                    autocomplete="chrome-off" aria-label="Nombre"
+                                                                    rows="1" class="andes-form-control__field"
+                                                                    maxlength="30" required>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row justify-content-center ">
+                                                            <div class="col-md-10 ">
+                                                                <div class="mb-3">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Imagen del proyecto
+                                                                    </span>
+                                                                    <input class="form-control" type="file"
+                                                                        id="formFile">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="d-grid gap-2 col-md-5 mx-auto">
+                                                            <button class="btn btn-success bg-gradient"
+                                                                type="submit">Agregar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+
+
+                            {{!-- PROYECTOS --}}
+                            {{!-- <div class="row justify-content-center ">
+                                <br>
+                                <div class="col-11 bg-white">
+                                    <br>
+                                    <div class="row justify-content-center ">
+                                        <h2 class="text-center text-black">San Vicente verde</h2>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="https://encolombia.com/wp-content/uploads/2018/11/Por-Qu%C3%A9-es-Tan-Grave-la-Deforestaci%C3%B3n-para-el-Medio-Ambiente.jpg"
+                                                alt="" width="100%" height="200px" style="border-radius: 5px;">
+                                        </div>
+                                        <div class="col-6">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                                            praesentium aliquid quidem doloribus? Optio nam aliquam, quod quibusdam quia
+                                            debitis corporis neque modi tempora fugiat eligendi est voluptas! Ad, eius!
+                                        </div>
+                                        <div class="col-2">
+                                            Carmen Perez
+                                        </div>
+                                        <div class="col-1">
+                                            <div class="col-1">
+                                                <button class="btn btn-sm bg-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-proyects" data-bs-whatever="@mdo">
+                                                    <span class="material-icons">
+                                                        edit
+                                                    </span>
+                                                </button>
+                                                <br><br>
+                                                <button class="btn btn-sm bg-danger ">
+                                                    <span class="material-icons">
+                                                        delete
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center ">
+                                <br>
+                                <div class="col-11 bg-white">
+                                    <br>
+                                    <div class="row justify-content-center ">
+                                        <h2 class="text-center text-black">Sembrando weed por todo florencia</h2>
+                                    </div>
+                                    <br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-3">
+                                            <img src="https://encolombia.com/wp-content/uploads/2018/11/Por-Qu%C3%A9-es-Tan-Grave-la-Deforestaci%C3%B3n-para-el-Medio-Ambiente.jpg"
+                                                alt="" width="100%" height="200px" style="border-radius: 5px;">
+                                        </div>
+                                        <div class="col-6">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                                            praesentium aliquid quidem doloribus? Optio nam aliquam, quod quibusdam quia
+                                            debitis corporis neque modi tempora fugiat eligendi est voluptas! Ad, eius!
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            Pepe Cadena
+                                        </div>
+                                        <div class="col-1">
+                                            <button class="btn btn-sm bg-primary">
+                                                <span class="material-icons">
+                                                    edit
+                                                </span>
+                                            </button>
+                                            <br><br>
+                                            <button class="btn btn-sm bg-danger">
+                                                <span class="material-icons">
+                                                    delete
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div> --}}
+
+
+
+                            {{!-- REGISTROS EJEMPLO --}}
+                            <div class="row justify-content-center">
+                                <div class="col-md-11 text-center bg-white">
+                                    <br>
+                                    <div class="col">
+                                        <table id="" class="table responsive text-center ">
+                                            <thead class="table-dark">
+                                                <td>
+                                                    Nombre
+                                                </td>
+                                                <td>
+                                                    Descripción
+                                                </td>
+                                                <td>
+                                                    Responsable
+                                                </td>
+                                                <td>
+
+                                                </td>
+                                            </thead>
+                                            <tbody>
+                                                <td>
+                                                    San Vicente verde
+                                                </td>
+                                                <td>
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
+                                                    beatae in delectus fugiat et eveniet, totam ut. Possimus, est
+                                                    quaerat!
+                                                </td>
+                                                <td>
+                                                    Carmen Perez
+                                                </td>
+
+
+                                                <td class="acc">
+                                                    <button type="button" class="btn " data-bs-toggle="modal"
+                                                        data-bs-target="#edit-proyects" data-bs-whatever="@mdo">
+                                                        <span class="material-icons">
+                                                            edit
+                                                        </span>
+                                                    </button>
+                                                    <button type="button" class="btn ">
+                                                        <span class="material-icons">
+                                                            delete
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                            </tbody>
+
+                                            <tbody>
+                                                <td>
+                                                    plantando weed por toda la amazonia.
+                                                </td>
+                                                <td>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                                                    fugit reiciendis quidem tempora veniam dolorum, doloremque eum vero
+                                                    accusamus enim!
+                                                </td>
+                                                <td>
+                                                    Juan Jose Perez
+                                                </td>
+
+
+                                                <td class="acc">
+                                                    <button type="button" class="btn " data-bs-target="#edit-proyects">
+                                                        <span class="material-icons">
+                                                            edit
+                                                        </span>
+                                                    </button>
+                                                    <button type="button" class="btn ">
+                                                        <span class="material-icons">
+                                                            delete
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                            </tbody>
+
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {{!-- PAGINACION --}}
+                            {{!-- <div class="row justify-content-center">
+                                <br>
+                                <div class="col">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+
+                                </div>
+                            </div> --}}
+                        </div>
+
+
+                        {{!-- MODAL EDITAR --}}
+                        <div class="modal fade" id="edit-proyects" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar proyecto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <span id="passwordHelpInline" class="form-text">
+                                                        Imagen del proyecto
+                                                    </span>
+                                                    <input class="form-control" type="file" id="formFile">
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="nombre" class="form-label">Nombre del proyecto</label>
+                                                    <input type="text" class="form-control" id="nombre"
+                                                        value={{nombre}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="descripción" class="form-label">Descripción</label>
+                                                    <textarea class="form-control mt-3"
+                                                        placeholder="Ingrese una breve descripción de usted o su empresa"
+                                                        id="floatingTextarea3"
+                                                        style="height: 100px">{{descripcion}}</textarea>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="row">
+
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label for="nombre" class="form-label">Responsable</label>
+                                                    <input type="text" class="form-control" id="nombre"
+                                                        value={{nombre}}>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Guardar </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!---USUARIOS--->
+                <div class="tab-pane fade" id="nav-usuarios" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="cp container ">
+                        <div class="row justify-content-center">
+                            <div class="col-md-11 ">
+                                <br>
+                                <div class="row ">
+
+                                    <div class="col-md-4 ">
+                                        <div class="buscar ">
+                                            <form class="d-flex">
+                                                <input class="form-control me-2" type="search"
+                                                    placeholder="Buscar usuario">
+                                                <button class="btn btn-outline-dark btn-sm" type="submit">
+                                                    <span class="material-icons">
+                                                        search
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!----MODAL NUEVO USUARIO---->
+                                    <div class="col-md-8 text-end">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Nuevo
+                                            Usuario</button>
+
+                                        <div class="modal fade" id="exampleModal2" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Nuevo
+                                                            Usuario</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form method="POST" class="">
+                                                            <div class="row justify-content-center ">
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Nombre completo
+                                                                    </span>
+                                                                    <input type="text" class="form-control bg-light"
+                                                                        id="validationDefault01" aria-required="true"
+                                                                        autocomplete="chrome-off" aria-label="Nombre"
+                                                                        rows="1" class="andes-form-control__field"
+                                                                        maxlength="40" required>
+                                                                </div>
+
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="row justify-content-center ">
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Nacionalidad
+                                                                    </span>
+                                                                    <select class="form-select bg-light"
+                                                                        aria-label="Default select example" required>
+                                                                        <option value=""></option>
+                                                                        <option value="1">AMAZONAS</option>
+                                                                        <option value="2">ANTIOQUIA</option>
+                                                                        <option value="3">ARAUCA</option>
+                                                                        <option value="4">ATLÁNTICO</option>
+                                                                        <option value="5">BOLÍVAR</option>
+                                                                        <option value="6">BOYACÁ</option>
+                                                                        <option value="7">CALDAS</option>
+                                                                        <option value="8">CAQUETÁ</option>
+                                                                        <option value="9">CASANARE</option>
+                                                                        <option value="10">CAUCA</option>
+                                                                        <option value="11">CESAR</option>
+                                                                        <option value="12">CHOCÓ</option>
+                                                                        <option value="13">CÓRDOBA</option>
+                                                                        <option value="14">CUNDINAMARCA</option>
+                                                                        <option value="15">GUAINÍA</option>
+                                                                        <option value="16">GUAVIARE</option>
+                                                                        <option value="17">HUILA</option>
+                                                                        <option value="18">LA GUAJIRA</option>
+                                                                        <option value="19">MAGDALENA</option>
+                                                                        <option value="20">META</option>
+                                                                        <option value="21">NARÍÑO</option>
+                                                                        <option value="22">NORTE DE SANTANDER
+                                                                        </option>
+                                                                        <option value="23">PUTUMAYO</option>
+                                                                        <option value="24">QUINDÍO</option>
+                                                                        <option value="25">RISARALDA</option>
+                                                                        <option value="26">SAN ANDRÉS Y
+                                                                            PROVIDENCIA</option>
+                                                                        <option value="27">SANTANDER</option>
+                                                                        <option value="28">SUCRE</option>
+                                                                        <option value="29">TOLIMA</option>
+                                                                        <option value="30">VALLE</option>
+                                                                        <option value="31">VAUPÉS</option>
+                                                                        <option value="32">VICHADA</option>
+                                                                    </select>
+                                                                </div>
+
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="row justify-content-center ">
+
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Email
+                                                                    </span>
+                                                                    <input type="email" class="form-control bg-light"
+                                                                        id="validationCustom01" aria-required="true"
+                                                                        autocomplete="chrome-off" rows="1"
+                                                                        maxlength="30" required>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+
+                                                            <div class="row justify-content-center ">
+                                                                <div class="col-md-10 text-start">
+                                                                    <span id="passwordHelpInline" class="form-text">
+                                                                        Contraseña
+                                                                    </span>
+                                                                    <input type="password" class="form-control bg-light"
+                                                                        id="validationDefault02" required>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="d-grid gap-2 col-md-5 mx-auto">
+                                                                <button class="btn btn-primary bg-gradient"
+                                                                    type="submit">Registrar</button>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        {{!-- REGISTROS EJEMPLO --}}
+                        <div class="row justify-content-center">
+                            <div class="col-md-11">
+                                <table id="" class="table text-center ">
+                                    <thead class="table-dark">
+                                        <td>
+                                            Usuario
+                                        </td>
+                                        <td>
+                                            Nombres
+                                        </td>
+                                        <td>
+                                            Apellidos
+                                        </td>
+                                        <td>
+                                            Email
+                                        </td>
+                                        <td>
+                                            Teléfono
+                                        </td>
+                                        <td>
+                                            Rol Usuario
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                xxxxxxxxxx
+                                            </td>
+                                            <td>
+                                                xxxxxxxx
+                                            </td>
+                                            <td>
+                                                xxxxxxxx
+                                            </td>
+                                            <td>
+                                                xxxxxxxxxxxxxxxx
+                                            </td>
+                                            <td>
+                                                xxxxxxxx
+                                            </td>
+                                            <td>
+                                                xxxxxxxx
+                                            </td>
+                                            <td class="acc">
+                                                <button type="button" class="btn ">
+                                                    <span class="material-icons">
+                                                        block
+                                                    </span>
+                                                </button>
+                                                <button type="button" class="btn ">
+                                                    <span class="material-icons">
+                                                        person_remove
+                                                    </span>
+
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                             {{!--        <tbody>
+                                        <td>
+                                            xxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td class="acc">
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    block
+                                                </span>
+                                            </button>
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    person_remove
+                                                </span>
+
+                                            </button>
+                                        </td>
+                                    </tbody>
+                                    <tbody>
+                                        <td>
+                                            xxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td class="acc">
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    block
+                                                </span>
+                                            </button>
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    person_remove
+                                                </span>
+
+                                            </button>
+                                        </td>
+                                    </tbody>
+                                    <tbody>
+                                        <td>
+                                            xxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td class="acc">
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    block
+                                                </span>
+                                            </button>
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    person_remove
+                                                </span>
+
+                                            </button>
+                                        </td>
+                                    </tbody>
+                                    <tbody>
+                                        <td>
+                                            xxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxxxxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td>
+                                            xxxxxxxx
+                                        </td>
+                                        <td class="acc">
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    block
+                                                </span>
+                                            </button>
+                                            <button type="button" class="btn ">
+                                                <span class="material-icons">
+                                                    person_remove
+                                                </span>
+
+                                            </button>
+                                        </td>
+                                    </tbody> --}}
+
+                                </table>
+                            </div>
+                        </div>
+                        <br>
+
+                        {{!-- PAGINACION --}}
+                        {{!-- <div class="row justify-content-center">
+                            <div class="col">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div> --}}
+                    </div>
+
+                </div>
+
+                <!---PETICIONES--->
+                <div class="tab-pane fade" id="nav-crear" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="container ">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

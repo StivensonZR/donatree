@@ -1,0 +1,56 @@
+<div class="modal fade" id="donarcomo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Como quieres donar?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center text-black">
+
+                    <div class="col-11 bg-light">
+                        <br>
+                        <div class="row justify-content-center">
+                            <div class="col-10">
+                                <p>
+                                    Inicia sesión para que quedes registrado en el listado de donantes de DonaTree
+                                </p>
+                                <a class="nav-link fw-bold text-black" href="/login">
+                                    <div class="d-grid gap-2 col-8 mx-auto">
+                                        <button class="btn btn-success bg-gradient  mb-3 ">Iniciar sesión - Registrarse
+                                        </button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <br>
+                    </div>
+                    <div class="col-11 bg-light">
+                        <br>
+                        <div class="row justify-content-center ">
+                            <div class="col-10">
+                                <h6>Donante anonimo</h6>
+                                <a class="nav-link fw-bold text-black" href="#">
+                                    <div class="d-grid gap-2 col-3 mx-auto">
+                                        <form action="/create-checkout-session" method="POST">
+                                            <button type="submit" id="checkout-button"
+                                                class="btn btn-success bg-gradient  mb-3 ">Donar</button>
+                                        </form>
+                                       
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

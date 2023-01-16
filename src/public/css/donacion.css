@@ -1,0 +1,29 @@
+
+.body{
+    height: 800px;
+    background-image: url(../img/deforestation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+
+.p{
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.msn{
+    border-radius: 10px;
+    padding: 80px;
+    background: rgba(248, 221, 214, 0.5);
+}
+
+
+@media (max-width: 420px) {
+    .body{
+        height: 910px;
+
+    }
+}
+

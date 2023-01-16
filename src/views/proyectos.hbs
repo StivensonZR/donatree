@@ -1,0 +1,49 @@
+<div class="container.fluid ">
+    {{>nav-index}}
+    <br><br>
+    <br><br>
+    <br>
+
+    <div class="container ">
+
+        {{>donar}}
+        <h2 class="text-dark text-center">Proyectos vinculados</h2>
+        <br>
+        <div class="row justify-content-center proyectos ">
+            {{#if proyecto}}
+            {{#each proyecto}}
+            <div class="row justify-content-center" id="proyecto">
+                <div class="col-md-10">
+                    <div class="row justify-content-center bg-light">
+                        <div class="col-md-6  text-center " >
+                            <img src={{this.img}} alt="" id="proyimg">
+                        </div>
+                        <div class="col-md-6 align-self-center ">
+                            <h3>
+                                {{this.proyecto}}
+                                <h5>
+                                    Responsable: {{this.responsable}}
+                                </h5>
+                            </h3>
+                            <br>
+                            <p>
+                                {{this.descripcion}}
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <h3>No hay proyectos</h3>
+            {{/if}}
+        </div>
+    </div>
+
+{{>footer}}
+
+</div>
+
+
+

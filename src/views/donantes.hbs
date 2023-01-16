@@ -1,0 +1,96 @@
+<div class="container.fluid">
+
+    {{>nav-index}}
+    <br><br><br><br><br>
+
+    <div class="container">
+        {{>donar}}
+        <div class="row donantes ">
+            <h2 class="text-dark text-center">Nuestros donantes</h2>
+            <br><br>
+            <div class="row justify-content-center ">
+                <div class="col-11">
+                    <br>
+                    <table id="donantes" class="table table-striped text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>
+                                    Nombre
+                                </th>
+                                <th>
+                                    Nacionalidad
+                                </th>
+                                <th>
+                                    Cuenta
+                                </th>
+                                <th>
+                                    Descripción
+                                </th>
+                                <th>
+                                    Fecha
+                                </th>
+                            </tr>
+                        </thead>
+                        {{#if response}}
+
+
+                        {{#each response}}
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {{this.nombre}}
+                                </td>
+                                <td>
+                                    {{this.nacionalidad}}
+                                </td>
+                                <td>
+                                    {{this.tipo}}
+                                </td>
+                                <td>
+                                    {{this.descripcion}}
+                                </td>
+                                <td>
+                                    {{this.fecha}}
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        {{/each}}
+
+
+                        {{else}}
+                        <tbody>
+                            <tr>
+                                <td>
+                                    NO HAY DATOS
+                                </td>
+                                <td>
+                                    NO HAY DATOS
+                                </td>
+                                <td>
+                                    NO HAY DATOS
+                                </td>
+                                <td>
+                                    NO HAY DATOS
+                                </td>
+                                <td>
+                                    NO HAY DATOS
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        {{/if}}
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <br>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+</div>

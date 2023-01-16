@@ -1,0 +1,25 @@
+
+#proyimg {
+  /*   background-image: url(../img/deforestation.jpg);
+    background-size: cover;
+    opacity: 80%;
+    background-repeat: no-repeat; */
+    border-radius: 30% 70% 70% 30% / 30% 50% 50% 70% ;
+    width: 450px;
+    height: 450px;
+    margin: 20px 0;
+} 
+
+
+#editproyimg{
+  background-image: url(../img/deforestation.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  border-style: ridge;
+}
+
+/* 
+#proyecto{
+    margin-bottom: 20px;
+} */

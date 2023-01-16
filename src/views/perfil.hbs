@@ -1,0 +1,230 @@
+<div class="container.fluid" id="perfil">
+
+
+
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="row perfil-usuario-portada ">
+
+                <div class="perfil-usuario-avatar ">
+                    <img src="https://www.pngmart.com/files/21/Account-User-PNG-Photo.png" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <span class="material-icons">
+                            image
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="perfil-usuario-body ">
+
+            <div class="row perfil-usuario-bio justify-content-center ">
+                <div class="row ">
+                    <div class="col">
+
+                        <h3 class="titulo">
+                            {{nombre}}
+                        </h3>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+
+                    <div class="form-floating">
+                        <div class="row ">
+                            <div class="col ">
+
+                                Ingrese una breve descripción de usted o de su empresa
+
+                            </div>
+
+                        </div>
+
+                        <textarea class="form-control mt-3"
+                            placeholder="Ingrese una breve descripción de usted o su empresa" id="floatingTextarea2"
+                            style="height: 100px" disabled>{{ descripcion }}</textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center perfil-usuario-footer">
+
+                <div class="col-6 ">
+                    <div class="row dts">
+                        <div class="col">
+
+                            <label>Nacionalidad: </label>
+                        </div>
+                        <div class="col">
+
+                            <label for="Nombre">{{nacionalidad}} </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+
+                            <label>Usuario: </label>
+                        </div>
+                        <div class="col">
+
+                            <label for="Correo">{{usuario}} </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col">
+
+                            <label>Tipo de cuenta:</label>
+                        </div>
+                        <div class="col">
+
+                            <label for="Tipo_usuario">{{tipo}}</label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 ">
+                    <div class="row ">
+                        <div class="col">
+
+                            <label>Telefono:</label>
+                        </div>
+                        <div class="col">
+
+                            <label for="Telefono">{{telefono}} </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+
+                            <label>Direccón:</label>
+                        </div>
+                        <div class="col">
+
+                            <label for="Direccón">{{direccion}} </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+
+                            <label>Barrio:</label>
+                        </div>
+                        <div class="col">
+
+                            <label for="Direccón">{{barrio}} </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+    </section>
+    {{!-- MODAL EDITAR --}}
+    <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar información</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="descripción" class="form-label">Descripción</label>
+                                <textarea class="form-control mt-3"
+                                    placeholder="Ingrese una breve descripción de usted o su empresa"
+                                    id="descripcion" style="height: 100px">{{descripcion}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre_perfil" value={{nombre}}>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="direccion" value={{direccion}}>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="tipo_cuenta" class="form-label">Tipo de cuenta</label>
+                                <select id="tipo_cuenta" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="barrio" class="form-label">Barrio</label>
+                                <input type="text" class="form-control" id="barrio" value={{barrio}}>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Telefono</label>
+                                <input type="number" class="form-control" id="telefono" value={{telefono}}>
+                            </div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="btn_actua_perfil" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- BOTONES EDITAR - GUARDAR --}}
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-6 ">
+                <div class="row justify-content-center">
+
+                    <div class="col-3 text-end">
+                        <button data-bs-toggle="modal" data-bs-target="#editar" class="btn btn-primary ">
+                            Editar
+                        </button>
+
+                    </div>
+
+                    <div class="col-3 ">
+                        <button type="button" class="btn btn-primary ">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

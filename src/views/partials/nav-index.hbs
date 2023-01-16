@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top ">
+    <div class="container">
+        <div class="d-flex">
+            <div class="">
+                <a href="/" class="">
+                    <img src="img/logo.png" width="90px" height="70px" class="logo">
+                </a>
+            </div>
+
+            <div class="col align-self-center text-black">
+                <h1>DonaTree</h1>
+            </div>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                {{#if permisos}}
+                <li class="nav-item">
+                    <form action="/create-checkout-session" method="POST">
+                        <button type="submit" id="checkout-button" class="btn btn-dark">Donar</button>
+                    </form>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-bold text-black" href="/proyectos">Proyectos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-bold text-black" href="/donantes">Donantes</a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                   
+                    <a class="nav-link dropdown-toggle fw-bold text-black" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{rol}}
+                    </a>
+                    <ul class="dropdown-menu bg-success bg-gradient">
+                        {{#each permisos}}
+                        <li><a class="dropdown-item" href={{this.ruta}}>{{this.permiso}} </a></li>
+                        {{/each}}
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" id="cerrar-sesion" href='#'>Cerrar sesión</a></li>
+                    </ul>
+                </li>
+
+
+
+                {{else}}
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#donarcomo"
+                    data-bs-whatever="@mdo">
+                    Donar</button>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-bold text-black" href="/proyectos">Proyectos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-bold text-black" href="/donantes">Donantes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-bold text-black" href="/login">Iniciar sesión</a>
+                </li>
+
+                {{/if}}
+            </ul>
+
+        </div>
+    </div>
+</nav>
