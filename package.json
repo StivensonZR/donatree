@@ -8,6 +8,7 @@
   },
   "type": "module",
   "scripts": {
+    "start": "node server",
     "dev": "nodemon src/index.js",
     "builds": "node src/index.js"
   },
