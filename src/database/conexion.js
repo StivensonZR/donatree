@@ -11,7 +11,7 @@ const pool = new Pool({
     database: process.env.DATABASE,
     dialectOptions: {
         ssl: {
-            require: false,
+            require: true,
             rejectUnauthorized: false
         }
     }
